@@ -1,0 +1,325 @@
+/* Add Google Fonts import at the top */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Rajdhani:wght@700;900&family=Montserrat:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@700;900&family=Montserrat:wght@600;700&display=swap');
+
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Base typography */
+body {
+    background: #23232e;
+    color: #eaeaea;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+body.roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff6f61;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 6px #ff6f6144;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3.2rem; /* Larger font size */
+    font-family: 'Montserrat', 'Roboto', 'Inter', sans-serif; /* Modern font stack */
+    letter-spacing: 2px;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    margin-top: 1.2rem;
+    color: #ff6f61;
+    text-shadow: 0 0 12px #ff6f6144;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+/* Layout spacing */
+section {
+    max-width: 900px;          /* NEW: prevents overly wide sections */
+    margin: 30px auto;         /* centers content */
+    padding: 0 20px;           /* safe padding for small screens */
+}
+
+/* Header & navigation */
+header {
+    background: #181820;
+    color: #ff6f61;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 2px solid #a259ff;
+}
+
+header h1 {
+    font-size: 3.2rem; /* Larger font size */
+    font-family: 'Montserrat', 'Roboto', 'Inter', sans-serif; /* Modern font stack */
+    letter-spacing: 2px;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    margin-top: 1.2rem;
+    color: #ff6f61;
+    text-shadow: 0 0 12px #ff6f6144;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 1.2rem;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav li:last-child {
+    margin-right: 0;           /* NEW: removes extra spacing */
+}
+
+nav a {
+    text-decoration: none;
+    color: #00b8d9; /* Distinct blue-cyan for section links */
+    font-size: 1.25rem; /* Slightly larger font */
+    font-family: 'Montserrat', 'Roboto', 'Inter', sans-serif;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+    background: #23232e;
+    color: #fff;
+    text-decoration: none;
+    transform: scale(1.08);
+    box-shadow: 0 2px 8px #00b8d944;
+}
+
+/* About section */
+#about {
+    text-align: center;
+}
+
+.about-content {
+    margin-top: 30px;
+}
+
+.about-content img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.about-photo {
+    display: block;
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    border: none;
+    border-radius: 50%;
+    margin: 0 auto 18px auto;
+    box-shadow: 0 0 12px 0 #b0b3b8;
+    transition: box-shadow 0.3s;
+    object-fit: cover;
+}
+
+/* Skills section */
+.skill {
+    margin-bottom: 20px;
+}
+
+/* Progress bars */
+.progress-bar {
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    background-color: #000;
+    height: 100%;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #181820;
+    color: #ff6f61;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #ff6f61;
+}
+
+footer p, footer a, footer i {
+    color: #ff6f61;
+}
+
+footer p {
+    color: #b0b3b8;
+}
+
+footer p span.name {
+    color: #ff6f61;
+    font-weight: bold;
+}
+
+footer .social-icons a,
+footer .social-icons i {
+    color: #fff !important;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.social-icons a:last-child {
+    margin-right: 0;           /* NEW: tidy spacing */
+}
+
+/* Image fallback styles */
+img {
+    /* Always show images, but if broken, show a border and alt text */
+    background: #222;
+    border: 1.5px solid #ff2fd0;
+}
+img:after {
+    content: attr(alt);
+    display: block;
+    color: #ff2fd0;
+    font-size: 1.1em;
+    text-align: center;
+    margin-top: 8px;
+}
+img:broken, img:not([src]) {
+    background: #222;
+    border: 2px dashed #ff2fd0;
+}
+
+/* Real name and developer alias styles */
+.real-name {
+    font-family: 'Orbitron', 'Rajdhani', 'Montserrat', 'Roboto', 'Inter', sans-serif;
+    font-size: 2.8rem; /* Match alias font size */
+    color: #3ad1c7; /* Teal for name */
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-right: 10px;
+    text-shadow: 0 0 12px #3ad1c744;
+}
+.dev-alias {
+    font-family: 'Orbitron', 'Rajdhani', 'Montserrat', 'Roboto', 'Inter', sans-serif;
+    font-size: 2.8rem;
+    color: #6c63ff;
+    font-weight: 900;
+    letter-spacing: 2px;
+    opacity: 1;
+    background: linear-gradient(90deg, #7f5cff 0%, #43e97b 100%); /* Gradient: punchy violet to teal */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    vertical-align: middle;
+    text-shadow: none;
+}
+
+/* Tagline styles */
+.tagline {
+    font-family: 'Montserrat', 'Roboto', 'Inter', sans-serif;
+    font-size: 1rem; /* Smaller font size */
+    color: #ffb86b; /* Soft peach, distinct from header and divider */
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: -1.2rem; /* Move tagline further upwards */
+    margin-bottom: 1.2rem;
+    text-align: center;
+    opacity: 0.85;
+}
+
+/* Side navigation */
+.side-nav {
+    position: fixed;
+    top: 220px; /* Lower side nav further to ensure no overlap with header or divider */
+    right: 32px;
+    background: rgba(34, 34, 46, 0.92);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px #23232e33;
+    padding: 12px 8px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: top 0.3s;
+}
+.side-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.side-nav li {
+    margin: 12px 0;
+}
+.side-link {
+    display: block;
+    color: #00b8d9;
+    background: none;
+    font-family: 'Montserrat', 'Roboto', 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.side-link:hover {
+    background: #3ad1c7;
+    color: #23232e;
+    transform: scale(1.08);
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Remove Resume section styles */
+.resume-links {
+    display: none;
+}
+.resume-link, .coverletter-link {
+    display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .about-content img {
+        max-width: 200px;
+    }
+}
