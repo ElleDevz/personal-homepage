@@ -38,7 +38,10 @@ header h1 {
     margin-bottom: 0.5rem;
     margin-top: 1.2rem;
     color: #ff6f61;
-    text-shadow: 0 0 12px #ff6f6144;
+    text-shadow:
+        0 0 18px #ff6f61cc,
+        0 0 36px #7c5cff99,
+        0 2px 8px #fff4; /* Enhanced glow for more impact */
     transition: color 0.3s, text-shadow 0.3s;
 }
 
@@ -55,23 +58,28 @@ section {
 
 /* Header & navigation */
 header {
-    background: #181820;
+    background: #181820; /* dark background for header, does NOT affect .dev-alias */
     color: #ff6f61;
     padding: 20px 0;
     text-align: center;
     border-bottom: 2px solid #a259ff;
+    /* background-color removed if present */
 }
 
 header h1 {
-    font-size: 3.2rem; /* Larger font size */
-    font-family: 'Montserrat', 'Roboto', 'Inter', sans-serif; /* Modern font stack */
+    font-size: 3.2rem;
+    font-family: 'Montserrat', 'Roboto', 'Inter', sans-serif;
     letter-spacing: 2px;
     font-weight: 800;
     margin-bottom: 0.5rem;
     margin-top: 1.2rem;
     color: #ff6f61;
-    text-shadow: 0 0 12px #ff6f6144;
+    text-shadow:
+        0 0 18px #ff6f61cc,
+        0 0 36px #7c5cff99,
+        0 2px 8px #fff4;
     transition: color 0.3s, text-shadow 0.3s;
+    /* background or background-color removed if present */
 }
 
 nav ul {
@@ -215,29 +223,21 @@ img:broken, img:not([src]) {
 }
 
 /* Real name and developer alias styles */
+/* --- RESTORED & ENHANCED: Neon Glow for Header Name & Alias --- */
 .real-name {
     font-family: 'Orbitron', 'Rajdhani', 'Montserrat', 'Roboto', 'Inter', sans-serif;
-    font-size: 2.8rem; /* Match alias font size */
+    font-size: 2.8rem;
     color: #3ad1c7; /* Teal for name */
     font-weight: 900;
     letter-spacing: 2px;
     margin-right: 10px;
-    text-shadow: 0 0 12px #3ad1c744;
+    /* Strong teal glow */
+    text-shadow:
+        0 0 12px #3ad1c7,
+        0 0 24px #3ad1c7cc,
+        0 2px 8px #fff4;
 }
-.dev-alias {
-    font-family: 'Orbitron', 'Rajdhani', 'Montserrat', 'Roboto', 'Inter', sans-serif;
-    font-size: 2.8rem;
-    color: #6c63ff;
-    font-weight: 900;
-    letter-spacing: 2px;
-    opacity: 1;
-    background: linear-gradient(90deg, #7f5cff 0%, #43e97b 100%); /* Gradient: punchy violet to teal */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    vertical-align: middle;
-    text-shadow: none;
-}
+/* --- END RESTORED & ENHANCED --- */
 
 /* Tagline styles */
 .tagline {
@@ -323,3 +323,36 @@ html {
         max-width: 200px;
     }
 }
+
+/* --- FINAL: Minimal, cross-browser-safe .dev-alias --- */
+.dev-alias {
+    display: inline !important;
+    /* Remove all background gradients and images */
+    background: none !important;
+    background-image: none !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    /* Fallback: use a solid color for text */
+    color: #7f5cff !important;
+    -webkit-text-fill-color: #7f5cff !important;
+    /* Keep the glow effect */
+    text-shadow:
+        0 0 16px #7f5cff,
+        0 0 32px #43e97bcc,
+        0 2px 8px #fff4 !important;
+    font-family: 'Orbitron', 'Rajdhani', 'Montserrat', 'Roboto', 'Inter', sans-serif !important;
+    font-size: 2.8rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 2px !important;
+    opacity: 1 !important;
+    vertical-align: middle !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    /* Fallback for browsers that don't support background-clip: text */
+    background-color: transparent !important;
+}
+/* --- END FINAL --- */
