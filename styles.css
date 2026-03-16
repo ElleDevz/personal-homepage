@@ -314,6 +314,10 @@ html {
 
 /* Hamburger menu styles for mobile */
 @media (max-width: 600px) {
+  /* --- Mobile Hamburger Menu Overlay --- */
+  header {
+    position: relative;
+  }
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -321,40 +325,54 @@ html {
     align-items: center;
     width: 40px;
     height: 40px;
-    background: none;
+    background: none; /* Remove any background */
     border: none;
     cursor: pointer;
     z-index: 1001;
-    position: absolute;
+    position: fixed;
     top: 1.5em;
     right: 1.5em;
+    box-shadow: none;
   }
   .hamburger .bar {
     width: 28px;
     height: 4px;
-    background: #fff;
+    background: #fff; /* Only show bars */
     margin: 4px 0;
     border-radius: 2px;
     transition: 0.3s;
+    display: block;
+  }
+  .hamburger:focus {
+    outline: 2px solid #00f0ff;
   }
   header nav ul {
     display: none;
     flex-direction: column;
     align-items: center;
-    background: #222;
-    position: absolute;
-    top: 60px;
-    right: 0;
+    justify-content: center;
+    background: rgba(34,34,34,0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
-    padding: 1.5em 0;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
     box-shadow: 0 4px 16px rgba(0,0,0,0.3);
     z-index: 1000;
+    transition: opacity 0.3s;
+    opacity: 0;
+    pointer-events: none;
   }
   header.nav-open nav ul {
     display: flex;
+    opacity: 1;
+    pointer-events: auto;
   }
   header nav ul li {
-    margin: 1em 0;
+    margin: 1.5em 0;
+    font-size: 1.3em;
   }
   nav {
     position: static;
