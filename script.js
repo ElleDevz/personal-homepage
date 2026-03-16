@@ -78,4 +78,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (fallback) fallback.style.display = 'block';
         console.error('Slideshow JS error:', err);
     }
+
+    // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const header = document.querySelector('header');
+    const nav = document.getElementById('main-nav');
+    if (hamburger && header && nav) {
+        hamburger.addEventListener('click', function() {
+            const isOpen = header.classList.toggle('nav-open');
+            // Update aria-expanded for accessibility
+            hamburger.setAttribute('aria-expanded', isOpen);
+        });
+        // Optional: close menu when a nav link is clicked (for better UX)
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                header.classList.remove('nav-open');
+                hamburger.setAttribute('aria-expanded', false);
+            });
+        });
+    }
 });

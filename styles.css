@@ -312,6 +312,64 @@ html {
     display: none;
 }
 
+/* Hamburger menu styles for mobile */
+@media (max-width: 600px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    position: absolute;
+    top: 1.5em;
+    right: 1.5em;
+  }
+  .hamburger .bar {
+    width: 28px;
+    height: 4px;
+    background: #fff;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  header nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #222;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100vw;
+    padding: 1.5em 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+  header.nav-open nav ul {
+    display: flex;
+  }
+  header nav ul li {
+    margin: 1em 0;
+  }
+  nav {
+    position: static;
+  }
+}
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+}
+@media (max-width: 600px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
     header {
