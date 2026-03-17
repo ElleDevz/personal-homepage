@@ -528,10 +528,45 @@ html {
     width: 100%;
   }
 }
-.hamburger.fab, .back-to-top { display: none; }
-@media (max-width: 600px) {
-  .hamburger.fab, .back-to-top { display: flex; }
+/* --- CLEAN CODE: Hamburger menu popup as a floating box (mobile only, targets #main-nav) --- */
+@media (max-width: 800px) {
+  #main-nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: fixed;
+    top: 60px; /* Just below the hamburger button */
+    right: 16px;
+    width: max-content;
+    min-width: 120px;
+    max-width: 90vw;
+    height: auto;
+    background: rgba(34,34,34,0.98); /* Slightly visible for accessibility */
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    z-index: 1100;
+    padding: 0.5em 1em;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateY(-10px) scale(0.98);
+  }
+  header.nav-open #main-nav {
+    display: flex !important;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+  #main-nav li {
+    margin: 0.3em 0.5em;
+    font-size: 1.1em;
+    text-align: right;
+    width: 100%;
+  }
 }
+/* --- END CLEAN CODE --- */
 
 /* Responsive styles */
 @media (max-width: 768px) {
